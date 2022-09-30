@@ -32,11 +32,11 @@ export class LoginComponent implements OnInit {
       if(user.status == 406){
         this.form.reset();
         this.error();
+      }else{
+        localStorage.setItem('token', user.access_token);
+        localStorage.setItem('usuario', this.form.value.usuario!);
+        this.router.navigate(['/home']);
       }
-
-      localStorage.setItem('token', user.access_token);
-      localStorage.setItem('usuario', this.form.value.usuario!);
-      this.router.navigate(['/home']);
       
     });
     }

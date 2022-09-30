@@ -7,7 +7,7 @@
       <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
       <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
     </button>
-    Responsive side navigation
+    Menú
 </mat-toolbar>
   
 <mat-sidenav-container>
@@ -22,7 +22,7 @@
   
       <mat-divider></mat-divider>
   
-      <button mat-button class="menu-button" routerLink="/home">
+      <button mat-button class="menu-button" routerLink="/home/list">
         <mat-icon>home</mat-icon>
         <span>Home</span>
       </button>
@@ -44,6 +44,7 @@
     </mat-sidenav>
     <mat-sidenav-content>
       <div class="content mat-elevation-z8">
+        <router-outlet></router-outlet>
       </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

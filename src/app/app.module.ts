@@ -8,12 +8,14 @@ import { LoginComponent } from './login/login.component';
 import { LoginModule } from './login/login.module';
 import { ShareModule } from './share/share.module';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ListComponent } from './character/list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavigationComponent
+    NavigationComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
