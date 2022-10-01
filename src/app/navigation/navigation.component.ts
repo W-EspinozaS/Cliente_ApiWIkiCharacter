@@ -6,21 +6,19 @@ import { PeticionesService } from '../services/peticiones.service';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css']
+  styleUrls: ['./navigation.component.css'],
 })
-export class NavigationComponent{
-
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+export class NavigationComponent {
+  isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
     .pipe(
-      map(result => result.matches),
+      map((result) => result.matches),
       shareReplay()
     );
   drawer: any;
 
-  constructor(private breakpointObserver: BreakpointObserver,
-    private services: PeticionesService) { }
-
-  logOut(){
-    this.services.logOut();
-  }
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private services: PeticionesService
+  ) {}
 }

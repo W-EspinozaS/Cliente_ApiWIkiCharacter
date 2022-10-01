@@ -12,7 +12,6 @@
       <th scope="col">Alias</th>
       <th scope="col">Foto</th>
       <th scope="col">Status</th>
-      <th scope="col">Pelicula</th>
       <th scope="col"></th>
     </tr>
     </thead>
@@ -23,8 +22,9 @@
       <td>{{ u.alias }}</td>
       <td><img src="{{ u.foto }}"></td>
       <td>{{ u.status }}</td>
-      <td>{{ u.apariciones[0].pelicula }}
-      </td>
+      <!-- <td>{{ u.apariciones[0].pelicula }}
+        </td> -->
+              
       <td>
         <button mat-button class="menu-button" routerLink="/about">
             <mat-icon color="warn">delete</mat-icon>
