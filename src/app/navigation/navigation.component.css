@@ -13,7 +13,11 @@ mat-sidenav {
     padding: 16px;
     text-align: center;
 }
-  
+
+.end{
+    display: flex;
+    justify-content: right;
+}
 .content {
     height: calc(100vh - 130px);
     border-radius: 10px;

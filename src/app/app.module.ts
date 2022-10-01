@@ -10,6 +10,7 @@ import { ShareModule } from './share/share.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ListComponent } from './character/list/list.component';
 import { HomeComponent } from './home/home.component';
+import { CreateComponent } from './character/create/create.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     NavigationComponent,
     ListComponent,
-    HomeComponent
+    HomeComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

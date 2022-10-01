@@ -1,6 +1,7 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { map, Observable, shareReplay } from 'rxjs';
+import { PeticionesService } from '../services/peticiones.service';
 
 @Component({
   selector: 'app-navigation',
@@ -16,6 +17,10 @@ export class NavigationComponent{
     );
   drawer: any;
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  constructor(private breakpointObserver: BreakpointObserver,
+    private services: PeticionesService) { }
 
+  logOut(){
+    this.services.logOut();
+  }
 }
