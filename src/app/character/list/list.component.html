@@ -1,1 +1,41 @@
-<p>list works!</p>
+<div class="cont">
+    <button mat-raised-button class="menu-button" color="primary" routerLink="/about">
+        <mat-icon>add</mat-icon>
+        <span>Create</span>
+    </button>
+</div>
+<table class="table">
+    <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Alias</th>
+      <th scope="col">Foto</th>
+      <th scope="col">Status</th>
+      <th scope="col">Pelicula</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let u of personajes; let indice=index">
+      <th>{{ indice+1 }}</th>
+      <th>{{ u.nombre }}</th>
+      <td>{{ u.alias }}</td>
+      <td><img src="{{ u.foto }}"></td>
+      <td>{{ u.status }}</td>
+      <td>{{u.apariciones[0].pelicula}}
+      </td>
+      <td>
+        <button mat-button class="menu-button" routerLink="/about">
+            <mat-icon color="warn">delete</mat-icon>
+        </button>
+        <button mat-button class="menu-button" routerLink="/about">
+            <mat-icon color="basic">edit</mat-icon>
+        </button>
+        <button mat-button class="menu-button" routerLink="/about">
+            <mat-icon color="basic">density_medium</mat-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>

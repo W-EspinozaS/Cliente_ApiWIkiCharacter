@@ -9,13 +9,15 @@ import { LoginModule } from './login/login.module';
 import { ShareModule } from './share/share.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ListComponent } from './character/list/list.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavigationComponent,
-    ListComponent
+    ListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

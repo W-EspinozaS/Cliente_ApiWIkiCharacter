@@ -22,3 +22,7 @@ width: 100%;
 .login--btn{
     height: 5rem;
 }
+
+.spinner{
+    margin: 0px auto;
+}

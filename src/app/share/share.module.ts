@@ -12,6 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
@@ -26,7 +27,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    MatProgressSpinnerModule
   ],
   exports:[
     MatFormFieldModule,
@@ -38,7 +40,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    MatProgressSpinnerModule
   ]
 })
 export class ShareModule { }

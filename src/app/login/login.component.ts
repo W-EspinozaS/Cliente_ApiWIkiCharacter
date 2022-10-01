@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UsuarioDTO } from '../dto/usuario-dto';
-import { LoginService } from '../services/login.service';
+import { PeticionesService } from '../services/peticiones.service';
 
 @Component({
   selector: 'app-login',
@@ -11,10 +11,11 @@ import { LoginService } from '../services/login.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  
+  loading= false;
+
   constructor(
     private _snackBar: MatSnackBar,
-    private loginservices: LoginService,
+    private services: PeticionesService,
     private fb: FormBuilder,
     private router: Router
     ) { }
@@ -28,23 +29,31 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.loginservices.logins(<UsuarioDTO>this.form.value).subscribe((user:any)=>{
+    this.services.logins(<UsuarioDTO>this.form.value).subscribe((user:any)=>{
       if(user.status == 406){
         this.form.reset();
         this.error();
       }else{
         localStorage.setItem('token', user.access_token);
         localStorage.setItem('usuario', this.form.value.usuario!);
-        this.router.navigate(['/home']);
-      }
-      
+        this.fakelogin();
+      } 
     });
-    }
-    error(){
-      this._snackBar.open('Los Datos son incorrectos', '', {
-        duration: 3000,
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom'
-      });
+  }
+
+  error(){
+    this._snackBar.open('Los Datos son incorrectos', '', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    });
+  }
+
+  fakelogin(){
+    this.loading= true;
+    setTimeout(()=>{
+      this.router.navigate(['/home']);
+      this.loading=false;
+    }, 1500);
   }
 }
