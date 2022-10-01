@@ -1,1 +1,95 @@
-<p>create works!</p>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Crear Personaje</h4>
+                        <p class="card-category">rellene todos los campos</p>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="form1" (ngSubmit)="crear()">
+   
+                            <div class="row">
+                                <div class="col-md-5">
+                                  <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Nombre" formControlName="nombre">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-3">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Alias" formControlName="alias">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="status" formControlName="status">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+   
+                            <div class="row">
+                              <div class="col-md-12">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Link Foto" formControlName="foto">
+                                </mat-form-field>
+                              </div>
+                          </div>
+   
+                            <div class="row">
+                              <div class="col-md-12">
+                                <label>Descripcion:</label>
+                                <mat-form-field class="example-full-width">
+                                   <textarea matInput placeholder="Breve resumen del personaje" formControlName="descripcion"></textarea>
+                                 </mat-form-field>
+                              </div>
+                          </div>
+   
+                          <div class="row">
+                            <div class="col-md-6">
+                              <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Lanzamiento" type="text" formControlName="lanzamiento">
+                              </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                              <mat-form-field class="example-full-width">
+                                <input matInput placeholder="N° Apariciones" type="number" formControlName="apariciones.idApariciones">
+                              </mat-form-field>
+                            </div>
+                        </div>
+   
+                          <div class="row">
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Pelicula" type="text" formControlName="apariciones.pelicula">
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Estreno" type="text" formControlName="apariciones.estreno">
+                                  </mat-form-field>
+                                </div>
+                          </div>
+   
+                            <div class="row">
+                              <div class="col-md-12">
+                                <label>Sinopsis:</label>
+                                <mat-form-field class="example-full-width">
+                                   <textarea matInput placeholder="Descripcion de la pelicula" formControlName="apariciones.sinopsis"></textarea>
+                                 </mat-form-field>
+                              </div>
+                          </div>
+                         
+                            <button mat-raised-button type="submit" [disabled]="form1.invalid" color="primary" class="btn pull-right">
+                                <span>Guardar Personaje</span>
+                                <mat-icon>check</mat-icon>
+                            </button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+   
+        </div>
+    </div>
+  </div>

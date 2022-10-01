@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Apariciones, PersonajeDTO } from 'src/app/dto/personaje-dto';
+import { PeticionesService } from 'src/app/services/peticiones.service';
 const ruta="http://localhost:3000";
 
 @Component({
@@ -10,18 +11,20 @@ const ruta="http://localhost:3000";
 })
 export class ListComponent implements OnInit {
 
-  personajes:PersonajeDTO[]=[];
-  apariciones:Apariciones[]=[];
-
   constructor(
-    private http:HttpClient
+    private services:PeticionesService
   ) { }
 
+  personajes:PersonajeDTO[]=[];
   ngOnInit(): void {
-    this.http.get<PersonajeDTO[]>(`${ruta}/character`).subscribe((res)=>{
-      this.personajes=res
+    this.services.getCharacter().subscribe((personajes:any) =>{
+      this.personajes=personajes;
     });
 
   }
+
+  delete(){}
+
+  update(){}
 
 }

@@ -1,5 +1,5 @@
 export interface PersonajeDTO {
-    _id:         string;
+    // _id:         string;
     nombre:      string;
     alias:       string;
     descripcion: string;
@@ -7,7 +7,7 @@ export interface PersonajeDTO {
     lanzamiento: string;
     status:      string;
     apariciones: Apariciones[];
-    __v:         number;
+    // __v:         number;
 }
 
 export interface Apariciones{

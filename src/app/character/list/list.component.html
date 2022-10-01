@@ -1,5 +1,5 @@
 <div class="cont">
-    <button mat-raised-button class="menu-button" color="primary" routerLink="/about">
+    <button mat-raised-button class="menu-button" color="primary" routerLink="/home/personas/create">
         <mat-icon>add</mat-icon>
         <span>Create</span>
     </button>
@@ -23,7 +23,7 @@
       <td>{{ u.alias }}</td>
       <td><img src="{{ u.foto }}"></td>
       <td>{{ u.status }}</td>
-      <td>{{u.apariciones[0].pelicula}}
+      <td>{{ u.apariciones[0].pelicula }}
       </td>
       <td>
         <button mat-button class="menu-button" routerLink="/about">
